@@ -33,3 +33,7 @@ dependencies {
   compile("com.h2database:h2")
   testCompile('org.springframework.boot:spring-boot-starter-test')
 }
+
+task wrapper(type: Wrapper) {
+  gradleVersion = '3.5'
+}
