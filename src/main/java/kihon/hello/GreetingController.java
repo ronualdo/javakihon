@@ -34,7 +34,7 @@ public class GreetingController {
     public ModelAndView greeting(@PathVariable(value = "userId") Long userId) {
         Person person = personRepository.findOne(userId);
         String greeting = person == null ? "Whazzzuppp" : person.getGreeting();
-        ModelAndView view = new ModelAndView("index");
+        ModelAndView view = new ModelAndView("greeting/index");
         view.addObject("greeting", greeting);
         return view;
     }
