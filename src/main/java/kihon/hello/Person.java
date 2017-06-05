@@ -12,18 +12,16 @@ public class Person {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String greeting;
+    private String name;
 
-    public Person(String greeting) {
+    public Person(String name, String greeting) {
+        this.name = name;
         this.greeting = greeting;
     }
 
     private Person() {}
 
-    public long getId() {
-        return id;
-    }
-
     public String getGreeting() {
-        return greeting;
+        return String.format("%s from %s", greeting, name);
     }
 }

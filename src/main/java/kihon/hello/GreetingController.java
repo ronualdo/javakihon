@@ -10,6 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.annotation.PostConstruct;
 import java.util.Arrays;
 import java.util.Optional;
+import java.util.stream.Stream;
 
 @Controller
 public class GreetingController {
@@ -18,10 +19,9 @@ public class GreetingController {
 
     @PostConstruct
     public void init() {
-        Arrays.asList(new Person("Hi"),
-                new Person("Hello"),
-                new Person("Hola"))
-                .stream()
+        Stream.of(new Person("Ronualdo", "Hi"),
+                new Person("Fernando", "Hello"),
+                new Person("Raquel", "Hola"))
                 .forEach(personRepository::save);
     }
 
