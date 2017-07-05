@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  app:
+    image: javakihon
+    build: .
+    ports:
+      - 8080:8080
+    environment:
+      - DB_HOST=db
+    depends_on:
+      - db
+    volumes:
+      - .:/app
+  db:
+    image: postgres

@@ -1,7 +1,7 @@
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost/postgres
+    url: jdbc:postgresql://${DB_HOST:localhost}/postgres
     username: postgres
   jpa:
     hibernate:
